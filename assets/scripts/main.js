@@ -24,8 +24,8 @@ function getRecipesFromStorage() {
 	// A9. TODO - Complete the functionality as described in this function
 	//           header. It is possible in only a single line, but should
 	//           be no more than a few lines.
-	const getRecipes = JSON.parse(localStorage.getItem('recipes') || []);
-	return getRecipes;
+	return JSON.parse(localStorage.getItem('recipes') || []);
+	
 }
 
 /**
@@ -91,7 +91,6 @@ function initFormHandler() {
 		let recipes = getRecipesFromStorage(); //B9
 		recipes.push(recipeObject);
 		saveRecipesToStorage(recipes);
-		formRef.reset()
 	});
 	// B10. TODO - Get a reference to the "Clear Local Storage" button
 	const clearLocalStorageButton = document.querySelector('button.danger');
