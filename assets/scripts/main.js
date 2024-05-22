@@ -44,7 +44,7 @@ function addRecipesToDocument(recipes) {
 	recipes.forEach(recipe =>{
 		const recipeCard = document.createElement('recipe-card');
 		recipeCard.data = recipe;
-		main.append(recipeCard); });
+		main.appendChild(recipeCard); });
 }
 
 /**
@@ -82,13 +82,14 @@ function initFormHandler() {
 	formRef.addEventListener('submit', event =>{ //B3
 		const formData = new FormData(formRef); //B4
 		const recipeObject = {}; //B5
-		formData.forEach(value, key =>{recipeObject[key] = value;})
+		formData.forEach(value, key => {recipeObject[key] = value;})
 		const recipeCard = document.createElement('recipe-card'); //B6
 		recipeCard.data = recipeObject; //B7
 		document.querySelector('main').appendChild(recipeCard); //B8
 		let recipes = getRecipesFromStorage(); //B9
 		recipes.push(recipeObject);
 		saveRecipesToStorage(recipes);
+		form.reset()
 	});
 	// B10. TODO - Get a reference to the "Clear Local Storage" button
 	const clearLocalStorageButton = document.querySelector('button.danger');
