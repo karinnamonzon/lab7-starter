@@ -24,8 +24,8 @@ function getRecipesFromStorage() {
 	// A9. TODO - Complete the functionality as described in this function
 	//           header. It is possible in only a single line, but should
 	//           be no more than a few lines.
-	const recipes = JSON.parse(localStorage.getItem('recipes') || []);
-	return recipes;
+	const recipes = localStorage.getItem('recipes');
+	return recipes ? JSON.parse(recipes) : [];
 }
 
 /**
@@ -86,8 +86,7 @@ function initFormHandler() {
 		formData.forEach(val, key =>{recipeObject[key] = val;})
 		const recipeCard = document.createElement('recipe-card'); //B6
 		recipeCard.data = recipeObject; //B7
-		const main = document.querySelector('main');
-		main.appendChild(recipeCard); //B8
+		document.querySelector('main').appendChild(recipeCard); //B8
 		let recipes = getRecipesFromStorage(); //B9
 		recipes.push(recipeObject);
 		saveRecipesToStorage(recipes);
