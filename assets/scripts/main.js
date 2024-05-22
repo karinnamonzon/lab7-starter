@@ -80,7 +80,6 @@ function initFormHandler() {
 	// B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
 	//            then save the recipes array back to localStorage
 	formRef.addEventListener('submit', event =>{ //B3
-		event.preventDefault();
 		const formData = new FormData(formRef); //B4
 		const recipeObject = {}; //B5
 		formData.forEach(value, key =>{recipeObject[key] = value;})
