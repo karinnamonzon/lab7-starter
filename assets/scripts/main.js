@@ -82,7 +82,7 @@ function initFormHandler() {
 	formRef.addEventListener('submit', event =>{ //B3
 		const formData = new FormData(formRef); //B4
 		const recipeObject = {}; //B5
-		formData.forEach(value, key => {recipeObject[key] = value;})
+		formData.forEach((value, key) => {recipeObject[key] = value;})
 		const recipeCard = document.createElement('recipe-card'); //B6
 		recipeCard.data = recipeObject; //B7
 		document.querySelector('main').appendChild(recipeCard); //B8
