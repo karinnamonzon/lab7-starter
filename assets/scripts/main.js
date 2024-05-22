@@ -99,7 +99,6 @@ function initFormHandler() {
 	// B13. TODO - Delete the contents of <main>
 	clearLocalStorageButton.addEventListener('click', () =>{ //B11
 		localStorage.clear(); //B12
-		const main = document.querySelector('main'); 
-		main.innerHTML = ''; //B13
+		document.querySelector('main').innerHTML = ''; //B13
 	});
 }
